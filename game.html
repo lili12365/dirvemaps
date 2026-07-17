@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Redirect | DriveMads</title>
+    <meta
+      name="description"
+      content="Legacy game URL for DriveMads. Redirects to the current dedicated game page."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" href="assets/games/drive-mad.png" />
+    <link rel="shortcut icon" href="favicon.svg" />
+    <link rel="canonical" href="https://drivemads.online/" />
+    <meta http-equiv="refresh" content="0; url=index.html" />
+    <script>
+      (function () {
+        const slug = new URLSearchParams(window.location.search).get("slug");
+        const isFileProtocol = window.location.protocol === "file:";
+        const target = slug
+          ? "games/" +
+            encodeURIComponent(slug) +
+            (isFileProtocol ? "/index.html" : "/")
+          : "index.html";
+        window.location.replace(target);
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-hero">
+      <div class="container">
+        <h1>Redirecting to the current game page</h1>
+        <p>
+          If the redirect does not happen automatically, return to the
+          <a class="inline-link" href="index.html">homepage</a>.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
